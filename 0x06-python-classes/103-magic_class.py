@@ -1,4 +1,4 @@
-ii#!/usr/bin/python3
+#!/usr/bin/python3
 """Magic class from a given ByteCode."""
 import math
 
