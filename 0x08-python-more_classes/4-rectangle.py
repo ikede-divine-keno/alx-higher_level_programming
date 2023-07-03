@@ -34,6 +34,10 @@ class Rectangle():
 
         return print_rectangle[:-1]
 
+    def __repr__(self):
+        """Sets the repr behavior of the print_rectangle object."""
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
     @property
     def width(self):
         """Get or set the width of the rectangle."""
