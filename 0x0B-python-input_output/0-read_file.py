@@ -1,8 +1,12 @@
 #!/usr/bin/python3
+"""read_file
+"""
 
 
 def read_file(filename=""):
-    """reads a file
+    """Takes in str filename to read it
     """
-    with open(filename, encoding='utf-8') as myFile:
-        print(myFile.read(), end='')
+
+    with open(filename, encoding="utf-8") as readFile:
+        print(readFile.read(), end=''
+    file.close())
