@@ -47,14 +47,14 @@ class Square extends PrevSquare {
   }
 
   charPrint (c) {
-    for (let i = 0; i < this.size; i++) {
+    for (let i = 0; i < this.height; i++) {
       let varSqua = '';
       if (c) {
-        for (let j = 0; j < this.size; j++) {
+        for (let j = 0; j < this.width; j++) {
           varSqua += c;
         }
       } else {
-        for (let j = 0; j < this.size; j++) {
+        for (let j = 0; j < this.width; j++) {
           varSqua += 'X';
         }
       }
