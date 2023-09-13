@@ -38,9 +38,9 @@ class Rectangle {
 **/
 // A Square class
 
-const Rectangle = require('./4-rectangle');
+const PrevSquare = require('./5-square');
 
-class Square extends Rectangle {
+class Square extends PrevSquare {
   constructor (size) {
     super(size, size);
     this.size = size;
