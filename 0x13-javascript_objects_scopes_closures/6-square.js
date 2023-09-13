@@ -52,9 +52,8 @@ class Square extends Rectangle {
       if (c) {
         for (let j = 0; j < this.size; j++) {
           varSqua += c;
-	}
-      }
-      else {
+        }
+      } else {
         for (let j = 0; j < this.size; j++) {
           varSqua += 'X';
         }
