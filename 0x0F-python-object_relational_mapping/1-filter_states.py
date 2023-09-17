@@ -1,18 +1,24 @@
 #!/usr/bin/python3
-"""A script that lists all states in a database."""
+"""script for use in getting all states from sql db
+"""
 import MySQLdb
 import sys
 
 
-if __name__ == "__main__":
-    username, password, name = sys.argv[1:]
-    db = MySQLdb.connect(
-        host="localhost", port=3306, user=username,
-        passwd=password, db=name
-    )
+if __name__ == '__main__':
+    args = sys.argv
+    username = args[1]
+    password = args[2]
+    data = args[3]
+    db = MySQLdb.connect(host='localhost', user=username,
+                         passwd=password, db=data,
+                         port=3306)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;")
-    for state in cur.fetchall():
-        print(state)
-    cur.close()
-    db.close()
+    num_rows = cur.execute('''
+            SELECT * FROM states
+            WHERE states.name LIKE 'N%'
+            ORDER BY states.id
+            ''')
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
