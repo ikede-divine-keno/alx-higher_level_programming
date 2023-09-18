@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-"""
-State Model
-"""
+"""module to define the states table"""
+from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import *
 
-Base = declarative_base()
+_metadata = MetaData()
+Base = declarative_base(metadata=_metadata)
 
 
 class State(Base):
-    """
-    The State Model.
-    """
-    __tablename__ = "states"
-    id = Column(Integer, primary_key=True)
-    name = Column(String(128), nullable=False)
+    """ class fto define the states table objects """
+    __tablename__ = 'states'
+
+    id = Column('id', Integer, unique=True, primary_key=True, nullable=False)
+    name = Column('name', String(128), nullable=False)
