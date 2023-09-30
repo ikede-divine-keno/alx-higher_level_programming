@@ -3,7 +3,6 @@
 http://0.0.0.0:5000/search_user with the letter as a parameter."""
 import sys
 import requests
-import json
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
