@@ -3,11 +3,12 @@
 http://0.0.0.0:5000/search_user with the letter as a parameter."""
 import sys
 import requests
+import json
 
 if __name__ == "__main__":
-    try:
+    if len(sys.argv) == 2:
         param = {"q": sys.argv[1]}
-    except IndexError:
+    else:
         param = {"q": ""}
     response = requests.post("http://0.0.0.0:5000/search_user", data=param)
     resp = response.json()
